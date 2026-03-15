@@ -1,11 +1,228 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import '../styles/global.css';
 ---
 
 <Layout>
-	<Welcome />
+	<main>
+		<section class="hero">
+			<div class="hero-content">
+				<h1>Shawn Melchor P. Trondillo</h1>
+				<p class="tagline">Virtual Marketing Assistant & IT Graduate | Startup Founder</p>
+				<p class="intro">
+					BS Information Technology graduate with a passion for building digital solutions.
+					Currently working as a Virtual Marketing Assistant while co-founding
+					Nourish360 — a digital health startup reimagining nutrition care.
+				</p>
+				<div class="cta-group">
+					<a href="#contact" class="btn btn-primary">Get in Touch</a>
+					<a href="#about" class="btn btn-secondary">Learn More</a>
+				</div>
+			</div>
+		</section>
+
+		<section id="about" class="about">
+			<h2>About Me</h2>
+			<div class="about-content">
+				<p>
+					Hi there! I'm Shawn, a fresh BS Information Technology graduate from the
+					University of Immaculate Conception, Davao City (2025). I'm currently working
+					as a Virtual Marketing Assistant, helping businesses grow digitally and connect
+					with their audiences more effectively.
+				</p>
+				<p>
+					Beyond marketing, I'm a startup founder — Nourish360, a digital health solution
+					digitalizing the Nutrition Care Process, started as my capstone project and is now
+					an active startup under a TBI organization. I was also a champion at the
+					Techstars Startup Weekend Social Innovation Davao 2023.
+				</p>
+				<p>
+					I'm proactive, resourceful, and always eager to combine technology with
+					real-world impact. Based in Digos City, Davao Del Sur, and open to remote
+					opportunities, collaborations, and exciting new projects.
+				</p>
+			</div>
+		</section>
+
+		<section id="skills" class="skills">
+			<h2>What I Do</h2>
+			<div class="skills-grid">
+				<div class="skill-card">
+					<h3>Marketing</h3>
+					<ul>
+						<li>Digital Marketing Strategy</li>
+						<li>Social Media Management</li>
+						<li>Email Marketing</li>
+						<li>Content Creation</li>
+						<li>Market Research</li>
+					</ul>
+				</div>
+				<div class="skill-card">
+					<h3>Development</h3>
+					<ul>
+						<li>Python</li>
+						<li>JavaScript & React</li>
+						<li>HTML / CSS</li>
+						<li>Astro</li>
+						<li>Java</li>
+					</ul>
+				</div>
+				<div class="skill-card">
+					<h3>Tools & Platforms</h3>
+					<ul>
+						<li>Git & GitHub</li>
+						<li>MySQL & Firebase</li>
+						<li>Figma</li>
+						<li>Microsoft Office</li>
+						<li>AWS</li>
+					</ul>
+				</div>
+				<div class="skill-card">
+					<h3>Soft Skills</h3>
+					<ul>
+						<li>Teamwork & Collaboration</li>
+						<li>Problem-Solving</li>
+						<li>Proactive & Resourceful</li>
+						<li>Adaptiveness</li>
+						<li>Business Communication</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+
+		<section id="projects" class="projects">
+			<h2>Projects & Experience</h2>
+			<div class="projects-grid">
+				<div class="project-card">
+					<div class="project-header">
+						<h3>Nourish360</h3>
+						<span class="project-badge">Startup · Jul 2024 – Present</span>
+					</div>
+					<p class="project-sub">Digitalizing the Nutrition Care Process</p>
+					<p>
+						Started as a capstone project, now a live startup under a TBI organization.
+						I assembled and led a team to design and iterate on a digital health solution
+						covering product development, business strategy, and customer service.
+					</p>
+				</div>
+				<div class="project-card">
+					<div class="project-header">
+						<h3>Tech Start-Up Event Champion</h3>
+						<span class="project-badge">Techstars · 2023</span>
+					</div>
+					<p class="project-sub">Techstars Startup Weekend Social Innovation Davao</p>
+					<p>
+						Collaborated as a team to ideate and build a prototype helping cancer patients
+						navigate their journey. Presented a working demo and business model to judges
+						and won the championship title.
+					</p>
+				</div>
+				<div class="project-card">
+					<div class="project-header">
+						<h3>Red Cross Action Team</h3>
+						<span class="project-badge">Volunteer · 2014 – 2020</span>
+					</div>
+					<p class="project-sub">Member & Public Information Officer – Cor Jesu College</p>
+					<p>
+						Served as a registered RCAT member and PIO for the Red Cross Youth club.
+						Participated in first aid stations, patrols, and disaster response during
+						Mindanao earthquakes, supporting community outreach and relief distribution.
+					</p>
+				</div>
+			</div>
+		</section>
+
+		<section id="certifications" class="certifications">
+			<h2>Certifications & Awards</h2>
+			<div class="cert-grid">
+				<div class="cert-card">
+					<span class="cert-icon">🏆</span>
+					<div>
+						<h4>Champion – Techstars Startup Weekend Social Innovation Davao</h4>
+						<p>Techstars, Davao City · September 2023</p>
+					</div>
+				</div>
+				<div class="cert-card">
+					<span class="cert-icon">⭐</span>
+					<div>
+						<h4>Outstanding Performance Award</h4>
+						<p>University of Immaculate Conception · April 2025</p>
+					</div>
+				</div>
+				<div class="cert-card">
+					<span class="cert-icon">📜</span>
+					<div>
+						<h4>Front-End Development Using React</h4>
+						<p>Coursera · 2025</p>
+					</div>
+				</div>
+				<div class="cert-card">
+					<span class="cert-icon">📜</span>
+					<div>
+						<h4>JavaScript Web Development</h4>
+						<p>Coursera · 2025</p>
+					</div>
+				</div>
+				<div class="cert-card">
+					<span class="cert-icon">☁️</span>
+					<div>
+						<h4>AWS Certified Solutions Architect</h4>
+						<p>Coursera · 2025</p>
+					</div>
+				</div>
+				<div class="cert-card">
+					<span class="cert-icon">🎤</span>
+					<div>
+						<h4>English for Effective Business Speaking</h4>
+						<p>Coursera · 2025</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="contact" class="contact">
+			<h2>Let's Connect</h2>
+			<p class="contact-intro">
+				Got a project in mind, want to collaborate, or just want to say hi?
+				I'd love to hear from you!
+			</p>
+			<div class="contact-links">
+				<a href="mailto:strondillo@gmail.com" class="contact-item">
+					<span class="icon">✉️</span>
+					<span>strondillo@gmail.com</span>
+				</a>
+				<a href="mailto:strondillo@yahoo.com" class="contact-item">
+					<span class="icon">📧</span>
+					<span>strondillo@yahoo.com</span>
+				</a>
+				<a href="https://linkedin.com/in/rex-mar-philip-bba22718b" target="_blank" class="contact-item">
+					<span class="icon">💼</span>
+					<span>LinkedIn</span>
+				</a>
+				<a href="https://github.com/YOUR_USERNAME" target="_blank" class="contact-item">
+					<span class="icon">💻</span>
+					<span>GitHub</span>
+				</a>
+			</div>
+			<form class="contact-form" action="mailto:strondillo@gmail.com" method="post" enctype="text/plain">
+				<div class="form-group">
+					<label for="name">Name</label>
+					<input type="text" id="name" name="name" placeholder="Your name" required />
+				</div>
+				<div class="form-group">
+					<label for="email">Email</label>
+					<input type="email" id="email" name="email" placeholder="your@email.com" required />
+				</div>
+				<div class="form-group">
+					<label for="message">Message</label>
+					<textarea id="message" name="message" rows="5" placeholder="What's on your mind?" required></textarea>
+				</div>
+				<button type="submit" class="btn btn-primary">Send Message</button>
+			</form>
+		</section>
+
+		<footer>
+			<p>© 2026 Shawn Melchor P. Trondillo. Built with passion ☕</p>
+		</footer>
+	</main>
 </Layout>
