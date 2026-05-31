@@ -9,28 +9,33 @@
 	}
 
 	:global(body) {
-	font-family: 'Segoe UI', system-ui, sans-serif;
-	line-height: 1.6;
-
-	background:
-		radial-gradient(circle at top, rgba(37,99,235,0.20), transparent 40%),
-		linear-gradient(
-			180deg,
-			#020617 0%,
-			#0f172a 50%,
-			#111827 100%
+		font-family: 'Segoe UI', system-ui, sans-serif;
+		line-height: 1.6;
+		color: #333;
+		background: linear-gradient(
+			-45deg,
+			#0a0f2e,
+			#0d2b8e,
+			#1a1a6e,
+			#0047ff,
+			#5b21b6,
+			#4f46e5,
+			#006eff,
+			#0d2b8e
 		);
+		background-size: 400% 400%;
+		animation: gradientShift 12s ease infinite;
+		background-attachment: fixed;
+		min-height: 100vh;
+	}
 
-	min-height: 100vh;
-	color: #fff;
-}
 	@keyframes gradientShift {
-	0%   { background-position: 0% 50%; }
-	25%  { background-position: 100% 50%; }
-	50%  { background-position: 100% 0%; }
-	75%  { background-position: 0% 100%; }
-	100% { background-position: 0% 50%; }
-}
+		0%   { background-position: 0% 50%; }
+		25%  { background-position: 100% 50%; }
+		50%  { background-position: 100% 0%; }
+		75%  { background-position: 0% 100%; }
+		100% { background-position: 0% 50%; }
+	}
 
 	main {
 		max-width: 900px;
@@ -251,9 +256,7 @@
 	}
 
 	.tab-content.active {
-		display: grid;
-    	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    	gap: 1rem;
+		display: block;
 	}
 
 	@keyframes fadeIn {
