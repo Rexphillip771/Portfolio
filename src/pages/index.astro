@@ -1,5 +1,4 @@
 ---
-import "../styles/global.css";
 import Hero from "../components/Hero.astro";
 import About from "../components/About.astro";
 import Skills from "../components/Skills.astro";
@@ -20,6 +19,33 @@ import { portfolio } from "../data/portfolio";
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <style is:global>
+      @import "tailwindcss";
+
+      @keyframes fade-in-up {
+        from { opacity: 0; transform: translateY(24px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      @keyframes fade-in {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+      @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-12px); }
+      }
+      .animate-fade-in-up { animation: 0.7s ease-out forwards fade-in-up; }
+      .animate-fade-in { animation: 0.5s ease-out forwards fade-in; }
+      .animate-float { animation: 4s ease-in-out infinite float; }
+      html { scroll-behavior: smooth; }
+      body {
+        background: #050508;
+        background-image: radial-gradient(ellipse at 50% 0%, rgba(88, 28, 135, 0.08) 0%, transparent 60%),
+          radial-gradient(ellipse at 80% 50%, rgba(15, 15, 35, 0.4) 0%, transparent 50%);
+        background-attachment: fixed;
+      }
+      ::selection { background: rgba(167, 139, 250, 0.3); color: #fff; }
+    </style>
   </head>
   <body class="min-h-screen text-gray-100 font-[Inter,sans-serif]">
     <main class="max-w-5xl mx-auto px-5">
