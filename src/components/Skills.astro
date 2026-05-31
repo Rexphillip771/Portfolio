@@ -1,0 +1,83 @@
+---
+interface SkillItem {
+  icon: string;
+  title: string;
+  desc: string;
+}
+
+interface Props {
+  skills: Record<string, SkillItem[]>;
+}
+
+const { skills } = Astro.props;
+const tabs = [
+  { id: "marketing", label: "Marketing" },
+  { id: "development", label: "Development" },
+  { id: "tools", label: "Tools" },
+  { id: "soft", label: "Soft Skills" },
+];
+---
+
+<section id="skills" class="py-16 md:py-24">
+  <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-white">
+    What I Do
+    <span class="block w-16 h-1 bg-linear-to-r from-violet-500 to-fuchsia-500 mx-auto mt-3 rounded-full"></span>
+  </h2>
+
+  <div class="flex flex-wrap justify-center gap-3 mb-10 mt-8">
+    {tabs.map((tab: { id: string; label: string }) => (
+      <button
+        class="tab-btn px-5 py-2.5 font-medium rounded-full transition-all duration-300 hover:-translate-y-0.5"
+        class:list={{
+          "bg-violet-600 text-white shadow-lg shadow-violet-600/30": tab.id === "marketing",
+          "bg-white/4 text-gray-300 border border-white/8 hover:bg-white/8": tab.id !== "marketing",
+        }}
+        data-tab={tab.id}
+      >
+        {tab.label}
+      </button>
+    ))}
+  </div>
+
+  <div class="tab-panels min-h-80">
+    {tabs.map((tab: { id: string; label: string }) => (
+      <div class:list={["tab-content grid md:grid-cols-2 gap-4", tab.id !== "marketing" && "hidden"]} id={tab.id}>
+        {skills[tab.id].map((item: SkillItem) => (
+          <div class="group bg-white/3 backdrop-blur-sm p-6 rounded-xl border border-white/6 hover:bg-white/6 transition-all duration-300 hover:-translate-y-1 hover:border-violet-500/30">
+            <div class="text-3xl mb-3">{item.icon}</div>
+            <h4 class="text-white font-semibold text-lg mb-1">{item.title}</h4>
+            <p class="text-gray-400 text-sm">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    ))}
+  </div>
+</section>
+
+<script>
+  const buttons = document.querySelectorAll(".tab-btn");
+  const panels = document.querySelectorAll(".tab-content");
+
+  buttons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      buttons.forEach((b) => {
+        b.classList.remove("bg-violet-600", "text-white", "shadow-lg", "shadow-violet-600/30");
+        b.classList.add("bg-white/4", "text-gray-300", "border", "border-white/8", "hover:bg-white/8");
+      });
+
+      panels.forEach((p) => {
+        p.classList.add("hidden");
+      });
+
+      btn.classList.add("bg-violet-600", "text-white", "shadow-lg", "shadow-violet-600/30");
+      btn.classList.remove("bg-white/4", "text-gray-300", "border", "border-white/8", "hover:bg-white/8");
+
+      const id = btn.getAttribute("data-tab");
+      if (!id) return;
+      const panel = document.getElementById(id);
+      if (panel) {
+        panel.classList.remove("hidden");
+      }
+    });
+  });
+</script>
